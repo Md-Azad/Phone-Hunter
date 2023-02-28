@@ -8,6 +8,16 @@ const loadPhone = async(text)=>{
 const displayPhones = phones =>{
     const phoneContainer = document.getElementById('phones-container');
     phoneContainer.innerText = '';
+    phones = phones.slice(0,6);
+    const notFound = document.getElementById('no-found-message');
+    if(phones.length ===0){
+        notFound.classList.remove('d-none');
+
+    }
+    else{
+        notFound.classList.add('d-none');
+    }
+    
     phones.forEach(phone =>{
         console.log(phone)
         const makeDiv = document.createElement('div');
